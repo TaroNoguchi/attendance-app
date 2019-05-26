@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from datetime import datetime
+import datetime as dt
 from django.utils import timezone
 
 # Create your models here.
@@ -29,18 +29,17 @@ class SubmitAttendance(models.Model):
     date = models.DateField(verbose_name='打刻日')
 
     
-class CulculateFee(models.Model):
-    '''
+class Fee(SubmitAttendance):
+    
     class Meta:
         db_table = 'fee'
-    #date = SubmitAttendance.objects.filter('date')
-    start = SubmitAttendance.objects.get(in_out=1, staff_id=9).time
-    end = SubmitAttendance.objects.get(in_out=0, staff_id=9).time
-    howlong_hours = ((end - start).seconds) / 3600
-    fee = howlong_hours * 900 
-    def culculatedFee(self):
-        self.save()
     '''
-
+    today = models.DateField(verbose_name='出勤日')
+    staff = SubmitAttendance.staff()
+    start = SubmitAttendance.objects.get(in_out=1, staff_id=staff, date=today).time
+    end = SubmitAttendance.objects.get(in_out=0, staff_id=staff, date=today).time
+    howlong_hours = ((end - start).seconds) / 3600
+    fee = howlong_hours * 900
+    '''
 
 

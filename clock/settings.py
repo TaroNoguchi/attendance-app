@@ -25,7 +25,10 @@ SECRET_KEY = 'tuuga#024&(zqy2^rhfe65yr29rb-9%8h!uio7kp7b(^&@^pj3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+        '127.0.0.1',
+        'tarox7.paiza-user.cloud',
+    ]
 
 
 # Application definition

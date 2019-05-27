@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import SubmitAttendance #,CulculateFee
+from .models import SubmitAttendance #,Fee
 from .forms import SubmitAttendanceForm
 import datetime as dt
 # Create your views here.

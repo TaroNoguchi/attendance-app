@@ -34,7 +34,7 @@ class SubmitAttendance(models.Model):
     in_out_dict = dict(IN_OUT)
 
     def __str__(self):
-        return  User.objects.get(id=self.staff_id), str(self.place_dict[self.place]), str(self.in_out_dict[self.in_out])
+        return  str(User.objects.get(id=self.staff_id)) + ' : ' + str(self.place_dict[self.place]) + ' ' + str(self.in_out_dict[self.in_out])
     
 class Fee(SubmitAttendance):
     

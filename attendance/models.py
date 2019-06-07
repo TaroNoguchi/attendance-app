@@ -36,17 +36,18 @@ class SubmitAttendance(models.Model):
     def __str__(self):
         return  str(User.objects.get(id=self.staff_id)) + ' : ' + str(self.place_dict[self.place]) + ' ' + str(self.in_out_dict[self.in_out])
     
+'''
 class Fee(SubmitAttendance):
     
     class Meta:
         db_table = 'fee'
-    '''
+
     today = models.DateField(verbose_name='出勤日')
     staff = SubmitAttendance.staff()
     start = SubmitAttendance.objects.get(in_out=1, staff_id=staff, date=today).time
     end = SubmitAttendance.objects.get(in_out=0, staff_id=staff, date=today).time
     howlong_hours = ((end - start).seconds) / 3600
     fee = howlong_hours * 900
-    '''
+'''
 
 

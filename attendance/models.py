@@ -11,12 +11,12 @@ class SubmitAttendance(models.Model):
         db_table = 'attendance'
     
     PLACES = (
-        (1, 'TANKS'),
-        (2, 'Red Tails'),
-        (3, 'ANNIE HALL'),
-        (4, 'NOKUROXY'),
-        (5, '七'),
-        (6, 'ART MON ZEN'),
+        (1, 'Bar Foo'),
+        (2, 'Bar Baz'),
+        (3, 'Bar Qux'),
+        (4, 'Bar Quux'),
+        (5, 'Bar Corge'),
+        (6, 'Bar Grault'),
     )
     IN_OUT = (
         (1, 'IN'),
